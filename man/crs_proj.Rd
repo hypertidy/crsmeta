@@ -19,5 +19,5 @@ Obtain the PROJ4 string from an object, if it has one. Supported inputs
 include raster, sf, sp, and silicate.
 }
 \seealso{
-crs_epsg crs_wkt
+crs_epsg crs_wkt2
 }

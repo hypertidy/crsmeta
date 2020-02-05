@@ -13,34 +13,34 @@ knitr::opts_chunk$set(
 )
 ```
 
-# crs
+# crsmeta
 
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of crs is to extract *map projection* metadata from in-memory spatial R
+The goal of crsmeta is to extract *map projection* metadata from in-memory spatial R
 objects. The map projection is a set of parameters that describe a *coordinate
 reference system* ('crs') and there are various systems that do so with
-different sets of aliases and assumptions. With crs we are only obtaining the
+different sets of aliases and assumptions. With crsmeta we are only obtaining the
 value from various formats so that we can develop tools that use them rather
 than concern ourselves with format-specific plumbing.
 
-We cannot obtain a crs value from out of memory sources like files, database, or
+We cannot obtain a crsmeta value from out of memory sources like files, databases, or
 URLs. Use another tool for that. 
 
 ## Installation
 
-You can install the released version of crs from [CRAN](https://CRAN.R-project.org) with:
+You can install the released version of crsmeta from [CRAN](https://CRAN.R-project.org) with:
 
 ``` r
-install.packages("crs")
+install.packages("crsmeta")
 ```
 
-Install the development version of crs from [Github](https://github.com/hypertidy/crs). 
+Install the development version of crsmeta from [Github](https://github.com/hypertidy/crsmeta). 
 
 ```r
 ## install.packages("remotes")
-remotes::install_github("hypertidy/crs")
+remotes::install_github("hypertidy/crsmeta")
 ```
 
 ## Example
@@ -49,7 +49,7 @@ This is a basic example which shows you how to obtain the PROJ string from
 spatial objects (raster, or silicate):
 
 ```{r example, warning=FALSE}
-library(crs)
+library(crsmeta)
 library(raster)
 
 ## a spatial object
@@ -62,7 +62,7 @@ crs_proj(silicate::SC0(silicate::inlandwaters))
 ```
 
 This also works for sp, and sf. The function `crs_epsg()` also works
-for sf objects, and `crs_wkt()` for sf and sp objects for later system-level 
+for sf objects, and `crs_wkt2()` for sf and sp objects for later system-level 
 versions of the PROJ library. 
 
 Now sp or sf objects: 
@@ -71,10 +71,10 @@ Now sp or sf objects:
 sfx <- sf::read_sf(system.file("gpkg/nc.gpkg", package = "sf", mustWork = TRUE))
 crs_proj(sfx)
 crs_proj(as(sfx, "Spatial"))
-crs_wkt(as(sfx, "Spatial"))
+crs_wkt2(as(sfx, "Spatial"))
 crs_epsg(sfx)
 ```
 
 ## Code of Conduct
 
-Please note that the crs project is released with a [Contributor Code of Conduct](https://contributor-covenant.org/version/1/0/0/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.
+Please note that the crsmeta project is released with a [Contributor Code of Conduct](https://contributor-covenant.org/version/1/0/0/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.

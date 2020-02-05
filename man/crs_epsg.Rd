@@ -19,5 +19,5 @@ Obtain the 'EPSG' string from an object, if it has one. Supported inputs
 include sf.
 }
 \seealso{
-crs_wkt crs_proj
+crs_wkt2 crs_proj
 }

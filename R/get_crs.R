@@ -1,3 +1,21 @@
+## get the sf crs
+sf_core <- function(x, ...) {
+  x_na <- NA_character_
+  if (inherits(x, "sfg")) {
+    warning("no crs in a bare sf geometry")
+    return(x_na)
+  }
+  ## 1. get geometry
+  if (inherits(x, "sf")) {
+    x <- x[[attr(x, "sf_column")]]
+  }
+  ## 2. get crs
+  if (inherits(x, "sfc")) {
+    x <- attr(x, "crs")
+    return(x)
+  }
+ x_na
+}
 #' Extract PROJ4 string
 #'
 #' Obtain the PROJ4 string from an object, if it has one. Supported inputs
@@ -7,7 +25,7 @@
 #' @param ... ignored
 #' @return character string (or NA)
 #' @export
-#' @seealso crs_epsg crs_wkt
+#' @seealso crs_epsg crs_wkt2
 crs_proj <- function(x, ...) {
   x_na <- NA_character_
   ## start with raster, then sp, then sf, then sc, then character, finally return NA
@@ -26,18 +44,8 @@ crs_proj <- function(x, ...) {
     }
     return(unclass(x))
   }
-  if (inherits(x, "sfg")) {
-    warning("no crs in a bare sf geometry")
-    return(x_na)
-  }
-  ## 1. get geometry
-  if (inherits(x, "sf")) {
-    x <- x[[attr(x, "sf_column")]]
-  }
-  ## 2. get crs
-  if (inherits(x, "sfc")) {
-    x <- attr(x, "crs")
-    ## 3. get string
+  x <- sf_core(x)
+  if (!is.null(x) && !is.na(x)) {
     return(x[["proj4string"]])
   }
 
@@ -54,15 +62,15 @@ crs_proj <- function(x, ...) {
 #' Extract 'WKT2' string
 #'
 #' Obtain the 'WKT2' string from an object, if it has one. Supported inputs
-#' include sp (and sf soon).
+#' include sp and sf.
 #'
-#' @section Warning: For sp WKT2 only, PROJ6 and beyond
+#' @section Warning: For WKT2 only, PROJ6 and beyond
 #' @param x object with 'WKT2' string
 #' @param ... ignored
 #' @return character string (or NA)
 #' @export
 #' @seealso crs_epsg crs_proj
-crs_wkt <- function(x, ...) {
+crs_wkt2 <- function(x, ...) {
   x_na <- NA_character_
   ## look for a wkt2 equivalent from sf or sp
   if (isS4(x) && methods::.hasSlot(x, "crs")) {
@@ -75,8 +83,9 @@ crs_wkt <- function(x, ...) {
       return(unclass(comm))
     }
   }
-  if (isS4(x) && methods::.hasSlot(x, "projargs")) {
-    return(as.character(x@projargs))
+  x <- sf_core(x)
+  if (!is.null(x) && !is.na(x)) {
+    return(x[["wkt2"]])
   }
   x_na
 }
@@ -89,21 +98,11 @@ crs_wkt <- function(x, ...) {
 #' @param ... ignored
 #' @return integer (or NA)
 #' @export
-#' @seealso crs_wkt crs_proj
+#' @seealso crs_wkt2 crs_proj
 crs_epsg <- function(x, ...) {
   x_na <- NA_integer_
-  if (inherits(x, "sfg")) {
-    warning("no crs in a bare sf geometry")
-    return(x_na)
-  }
-  ## 1. get geometry
-  if (inherits(x, "sf")) {
-    x <- x[[attr(x, "sf_column")]]
-  }
-  ## 2. get crs
-  if (inherits(x, "sfc")) {
-    x <- attr(x, "crs")
-    ## 3. get number
+  x <- sf_core(x)
+  if (!is.null(x) && !is.na(x)) {
     return(x[["epsg"]])
   }
   x_na
