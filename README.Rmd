@@ -1,0 +1,73 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# crs
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of crs is to extract *map projection* metadata from objects. The map 
+projection is a set of parameters that describe a *coordinate reference system* 
+('crs') and there are various systems that do so with different sets of aliases
+and assumptions. 
+
+## Installation
+
+You can install the released version of crs from [CRAN](https://CRAN.R-project.org) with:
+
+``` r
+install.packages("crs")
+```
+
+Install the development version of crs from [Github](https://github.com/hypertidy/crs). 
+
+```r
+## install.packages("remotes")
+remotes::install_github("hypertidy/crs")
+```
+
+## Example
+
+This is a basic example which shows you how to obtain the PROJ string from 
+spatial objects (raster, or silicate):
+
+```{r example, warning=FALSE}
+library(crs)
+library(raster)
+
+## a spatial object
+r <- raster::raster()
+r[50:51] <- 10
+
+crs_proj(r)
+
+crs_proj(silicate::SC0(silicate::inlandwaters))
+```
+
+This also works for sp, and sf. The function `crs_epsg()` also works
+for sf objects, and `crs_wkt()` for sf and sp objects for later system-level 
+versions of the PROJ library. 
+
+An sf object: 
+
+```{r sf}
+sfx <- sf::read_sf(system.file("gpkg/nc.gpkg", package = "sf", mustWork = TRUE))
+crs_wkt(as(sfx, "Spatial"))
+crs_epsg(sfx)
+```
+
+## Code of Conduct
+
+Please note that the crs project is released with a [Contributor Code of Conduct](https://contributor-covenant.org/version/1/0/0/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.

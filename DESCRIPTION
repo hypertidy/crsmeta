@@ -1,0 +1,21 @@
+Package: crs
+Title: Extract Coordinate System Metadata
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Michael",
+           family = "Sumner",
+           role = c("aut", "cre"),
+           email = "mdsumner@gmail.com",
+           comment = c(ORCID = "0000-0002-2471-7511"))
+Description: Obtain coordinate system metadata from various formats. This is
+ purely for getting simple metadata from in-memory formats, please use other
+ tools for out of memory data sources. 
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.0.2
+Suggests: 
+    testthat (>= 2.1.0)
+Imports: 
+    methods
