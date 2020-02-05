@@ -5,6 +5,11 @@
 
 <!-- badges: start -->
 
+[![Lifecycle:
+maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/crsmeta)](https://CRAN.R-project.org/package=crsmeta)
+[![CRAN\_Download\_Badge](http://cranlogs.r-pkg.org/badges/crsmeta)](https://cran.r-project.org/package=crsmeta)
 <!-- badges: end -->
 
 The goal of crsmeta is to extract *map projection* metadata from

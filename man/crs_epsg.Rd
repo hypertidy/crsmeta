@@ -18,6 +18,15 @@ integer (or NA)
 Obtain the 'EPSG' string from an object, if it has one. Supported inputs
 include sf.
 }
+\examples{
+crs_epsg(sfx)
+x <- sfx
+attr(x$geom, "crs")$epsg <- NA ## oh no we lost it
+crs_epsg(x)
+}
+\references{
+\href{http:/epsg.org/}{EPSG website}
+}
 \seealso{
 crs_wkt2 crs_proj
 }

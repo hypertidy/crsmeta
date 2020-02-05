@@ -36,8 +36,13 @@
 
 
 <meta property="og:title" content="crsmeta: Extract Coordinate System Metadata — crsmeta-package" />
-<meta property="og:description" content="Obtain coordinate system metadata from various formats. This is
- purely for getting simple metadata from in-memory formats, please use other
+<meta property="og:description" content="Obtain coordinate system metadata from various data formats. There 
+ are functions to extract a 'CRS' (coordinate reference system, 
+ &amp;lt;https://en.wikipedia.org/wiki/Spatial_reference_system&amp;gt;) in 'EPSG' (European 
+ Petroleum Survey Group, &amp;lt;http:/epsg.org/&amp;gt;), 'PROJ4' &amp;lt;https://proj.org/&amp;gt;, 
+ or 'WKT2' (Well-Known Text 2, 
+ &amp;lt;http://docs.opengeospatial.org/is/12-063r5/12-063r5.html&amp;gt;) forms. This is 
+ purely for getting simple metadata from in-memory formats, please use other 
  tools for out of memory data sources.
 Obtain coordinate system metadata from various in-memory R formats." />
 <meta name="twitter:card" content="summary" />
@@ -72,7 +77,7 @@ Obtain coordinate system metadata from various in-memory R formats." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">crsmeta</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
       </span>
     </div>
 
@@ -89,7 +94,12 @@ Obtain coordinate system metadata from various in-memory R formats." />
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        
+        <li>
+  <a href="https://github.com/hypertidy/crsmeta">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
       </ul>
       
     </div><!--/.nav-collapse -->
@@ -104,13 +114,18 @@ Obtain coordinate system metadata from various in-memory R formats." />
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>crsmeta: Extract Coordinate System Metadata</h1>
-    
+    <small class="dont-index">Source: <a href='https://github.com/hypertidy/crsmeta/blob/master/R/crsmeta-package.R'><code>R/crsmeta-package.R</code></a></small>
     <div class="hidden name"><code>crsmeta-package.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Obtain coordinate system metadata from various formats. This is
- purely for getting simple metadata from in-memory formats, please use other
+    <p>Obtain coordinate system metadata from various data formats. There 
+ are functions to extract a 'CRS' (coordinate reference system, 
+ &lt;https://en.wikipedia.org/wiki/Spatial_reference_system&gt;) in 'EPSG' (European 
+ Petroleum Survey Group, &lt;http:/epsg.org/&gt;), 'PROJ4' &lt;https://proj.org/&gt;, 
+ or 'WKT2' (Well-Known Text 2, 
+ &lt;http://docs.opengeospatial.org/is/12-063r5/12-063r5.html&gt;) forms. This is 
+ purely for getting simple metadata from in-memory formats, please use other 
  tools for out of memory data sources.</p>
 <p>Obtain coordinate system metadata from various in-memory R formats.</p>
     </div>
@@ -119,7 +134,14 @@ Obtain coordinate system metadata from various in-memory R formats." />
 
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>There are a few functions to return a character string of length one of each
+    <p>Coordinate reference systems (CRS) are described at
+<a href='https://en.wikipedia.org/wiki/Spatial_reference_system'>https://en.wikipedia.org/wiki/Spatial_reference_system</a>. The
+European Petroleum Survey Group (EPSG) codes are maintained at
+<a href='http:/epsg.org/'>http:/epsg.org/</a>. The old 'PROJ4' forms (along with newer systems) are
+described with the 'PROJ' library  <a href='https://proj.org/'>https://proj.org/</a>. The  Well-Known
+Text system 'WKT2' is documented at
+<a href='http://docs.opengeospatial.org/is/12-063r5/12-063r5.html'>http://docs.opengeospatial.org/is/12-063r5/12-063r5.html</a>.</p>
+<p>There are a few functions to return a character string of length one of each
 main kind of projection string.</p><table class='table'>
 <tr><td><code><a href='crs_epsg.html'>crs_epsg</a></code></td><td>short numeric EPSG lookup</td></tr>
 <tr><td><code><a href='crs_proj.html'>crs_proj</a></code></td><td>short PROJ4 style string</td></tr>
@@ -127,12 +149,21 @@ main kind of projection string.</p><table class='table'>
 </table>
 
 
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p>Useful links:</p><ul>
+<li><p><a href='https://github.com/hypertidy/crsmeta'>https://github.com/hypertidy/crsmeta</a></p></li>
+<li><p>Report bugs at <a href='https://github.com/hypertidy/crsmeta/issues'>https://github.com/hypertidy/crsmeta/issues</a></p></li>
+</ul>
+
+</div>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#details">Details</a></li>
+      <li><a href="#see-also">See also</a></li>
     </ul>
 
     <h2>Author</h2>

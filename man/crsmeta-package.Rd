@@ -6,13 +6,26 @@
 \alias{crsmeta-package}
 \title{crsmeta: Extract Coordinate System Metadata}
 \description{
-Obtain coordinate system metadata from various formats. This is
- purely for getting simple metadata from in-memory formats, please use other
+Obtain coordinate system metadata from various data formats. There 
+ are functions to extract a 'CRS' (coordinate reference system, 
+ <https://en.wikipedia.org/wiki/Spatial_reference_system>) in 'EPSG' (European 
+ Petroleum Survey Group, <http:/epsg.org/>), 'PROJ4' <https://proj.org/>, 
+ or 'WKT2' (Well-Known Text 2, 
+ <http://docs.opengeospatial.org/is/12-063r5/12-063r5.html>) forms. This is 
+ purely for getting simple metadata from in-memory formats, please use other 
  tools for out of memory data sources.
 
 Obtain coordinate system metadata from various in-memory R formats.
 }
 \details{
+Coordinate reference systems (CRS) are described at
+\url{https://en.wikipedia.org/wiki/Spatial_reference_system}. The
+European Petroleum Survey Group (EPSG) codes are maintained at
+\url{http:/epsg.org/}. The old 'PROJ4' forms (along with newer systems) are
+described with the 'PROJ' library  \url{https://proj.org/}. The  Well-Known
+Text system 'WKT2' is documented at
+\url{http://docs.opengeospatial.org/is/12-063r5/12-063r5.html}.
+
 There are a few functions to return a character string of length one of each
 main kind of projection string.
 \tabular{ll}{
@@ -20,6 +33,14 @@ main kind of projection string.
 \code{\link{crs_proj}}        \tab short PROJ4 style string  \cr
 \code{\link{crs_wkt2}}        \tab the full parameter set as WKT2 string \cr
 }
+}
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/hypertidy/crsmeta}
+  \item Report bugs at \url{https://github.com/hypertidy/crsmeta/issues}
+}
+
 }
 \author{
 \strong{Maintainer}: Michael Sumner \email{mdsumner@gmail.com} (\href{https://orcid.org/0000-0002-2471-7511}{ORCID})

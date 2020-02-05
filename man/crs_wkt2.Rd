@@ -12,7 +12,7 @@ crs_wkt2(x, ...)
 \item{...}{ignored}
 }
 \value{
-character string (or NA)
+character string (or \code{NA})
 }
 \description{
 Obtain the 'WKT2' string from an object, if it has one. Supported inputs
@@ -22,6 +22,14 @@ include sp and sf.
  For WKT2 only, PROJ6 and beyond
 }
 
+\examples{
+crs_wkt2(sfx)
+
+crs_wkt2(sfx$geom)
+}
+\references{
+\href{http://docs.opengeospatial.org/is/12-063r5/12-063r5.html}{WKT2 specification}
+}
 \seealso{
 crs_epsg crs_proj
 }

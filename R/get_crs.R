@@ -23,9 +23,14 @@ sf_core <- function(x, ...) {
 #'
 #' @param x object with PROJ4 string
 #' @param ... ignored
-#' @return character string (or NA)
+#' @return character string (or `NA`)
+#' @references [PROJ system website](https://proj.org/)
 #' @export
 #' @seealso crs_epsg crs_wkt2
+#' @examples
+#' crs_proj(sfx)
+#'
+#' crs_proj(sfx$geom)
 crs_proj <- function(x, ...) {
   x_na <- NA_character_
   ## start with raster, then sp, then sf, then sc, then character, finally return NA
@@ -45,7 +50,7 @@ crs_proj <- function(x, ...) {
     return(unclass(x))
   }
   x <- sf_core(x)
-  if (!is.null(x) && !is.na(x)) {
+  if (!is.null(x) && !all(is.na(unlist(x)))) {
     return(x[["proj4string"]])
   }
 
@@ -67,9 +72,14 @@ crs_proj <- function(x, ...) {
 #' @section Warning: For WKT2 only, PROJ6 and beyond
 #' @param x object with 'WKT2' string
 #' @param ... ignored
-#' @return character string (or NA)
+#' @return character string (or `NA`)
+#' @references [WKT2 specification](http://docs.opengeospatial.org/is/12-063r5/12-063r5.html)
 #' @export
 #' @seealso crs_epsg crs_proj
+#' @examples
+#' crs_wkt2(sfx)
+#'
+#' crs_wkt2(sfx$geom)
 crs_wkt2 <- function(x, ...) {
   x_na <- NA_character_
   ## look for a wkt2 equivalent from sf or sp
@@ -84,7 +94,7 @@ crs_wkt2 <- function(x, ...) {
     }
   }
   x <- sf_core(x)
-  if (!is.null(x) && !is.na(x)) {
+  if (!is.null(x) && !all(is.na(unlist(x)))) {
     return(x[["wkt2"]])
   }
   x_na
@@ -98,11 +108,17 @@ crs_wkt2 <- function(x, ...) {
 #' @param ... ignored
 #' @return integer (or NA)
 #' @export
+#' @references [EPSG website](http:/epsg.org/)
 #' @seealso crs_wkt2 crs_proj
+#' @examples
+#' crs_epsg(sfx)
+#' x <- sfx
+#' attr(x$geom, "crs")$epsg <- NA ## oh no we lost it
+#' crs_epsg(x)
 crs_epsg <- function(x, ...) {
   x_na <- NA_integer_
   x <- sf_core(x)
-  if (!is.null(x) && !is.na(x)) {
+  if (!is.null(x) && !all(is.na(unlist(x)))) {
     return(x[["epsg"]])
   }
   x_na

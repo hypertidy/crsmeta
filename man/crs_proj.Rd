@@ -12,11 +12,19 @@ crs_proj(x, ...)
 \item{...}{ignored}
 }
 \value{
-character string (or NA)
+character string (or \code{NA})
 }
 \description{
 Obtain the PROJ4 string from an object, if it has one. Supported inputs
 include raster, sf, sp, and silicate.
+}
+\examples{
+crs_proj(sfx)
+
+crs_proj(sfx$geom)
+}
+\references{
+\href{https://proj.org/}{PROJ system website}
 }
 \seealso{
 crs_epsg crs_wkt2
