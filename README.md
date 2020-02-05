@@ -7,10 +7,16 @@
 
 <!-- badges: end -->
 
-The goal of crs is to extract *map projection* metadata from objects.
-The map projection is a set of parameters that describe a *coordinate
-reference system* (‘crs’) and there are various systems that do so with
-different sets of aliases and assumptions.
+The goal of crs is to extract *map projection* metadata from in-memory
+spatial R objects. The map projection is a set of parameters that
+describe a *coordinate reference system* (‘crs’) and there are various
+systems that do so with different sets of aliases and assumptions. With
+crs we are only obtaining the value from various formats so that we can
+develop tools that use them rather than concern ourselves with
+format-specific plumbing.
+
+We cannot obtain a crs value from out of memory sources like files,
+database, or URLs. Use another tool for that.
 
 ## Installation
 
@@ -54,11 +60,15 @@ This also works for sp, and sf. The function `crs_epsg()` also works for
 sf objects, and `crs_wkt()` for sf and sp objects for later system-level
 versions of the PROJ library.
 
-An sf
-object:
+Now sp or sf
+objects:
 
 ``` r
 sfx <- sf::read_sf(system.file("gpkg/nc.gpkg", package = "sf", mustWork = TRUE))
+crs_proj(sfx)
+#> [1] "+proj=longlat +datum=NAD27 +no_defs"
+crs_proj(as(sfx, "Spatial"))
+#> [1] "+proj=longlat +datum=NAD27 +no_defs"
 crs_wkt(as(sfx, "Spatial"))
 #> [1] "GEOGCRS[\"unknown\",DATUM[\"North American Datum 1927\",ELLIPSOID[\"Clarke 1866\",6378206.4,294.978698213898,LENGTHUNIT[\"metre\",1]],ID[\"EPSG\",6267]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8901]],CS[ellipsoidal,2],AXIS[\"longitude\",east,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433,ID[\"EPSG\",9122]]],AXIS[\"latitude\",north,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433,ID[\"EPSG\",9122]]]]"
 crs_epsg(sfx)

@@ -18,10 +18,15 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of crs is to extract *map projection* metadata from objects. The map 
-projection is a set of parameters that describe a *coordinate reference system* 
-('crs') and there are various systems that do so with different sets of aliases
-and assumptions. 
+The goal of crs is to extract *map projection* metadata from in-memory spatial R
+objects. The map projection is a set of parameters that describe a *coordinate
+reference system* ('crs') and there are various systems that do so with
+different sets of aliases and assumptions. With crs we are only obtaining the
+value from various formats so that we can develop tools that use them rather
+than concern ourselves with format-specific plumbing.
+
+We cannot obtain a crs value from out of memory sources like files, database, or
+URLs. Use another tool for that. 
 
 ## Installation
 
@@ -60,10 +65,12 @@ This also works for sp, and sf. The function `crs_epsg()` also works
 for sf objects, and `crs_wkt()` for sf and sp objects for later system-level 
 versions of the PROJ library. 
 
-An sf object: 
+Now sp or sf objects: 
 
 ```{r sf}
 sfx <- sf::read_sf(system.file("gpkg/nc.gpkg", package = "sf", mustWork = TRUE))
+crs_proj(sfx)
+crs_proj(as(sfx, "Spatial"))
 crs_wkt(as(sfx, "Spatial"))
 crs_epsg(sfx)
 ```
