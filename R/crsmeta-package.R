@@ -22,11 +22,12 @@ NULL
 #'
 #' There are a few functions to return a character string of length one of each
 #' main kind of projection string.
-#'\tabular{ll}{
+#' \tabular{ll}{
 #'  \code{\link{crs_epsg}}         \tab short numeric EPSG lookup \cr
 #'  \code{\link{crs_proj}}        \tab short PROJ4 style string  \cr
 #'  \code{\link{crs_wkt2}}        \tab the full parameter set as WKT2 string \cr
 #' }
+#'
 #' @name crsmeta-package
 #' @aliases crsmeta
 #' @docType package
@@ -51,7 +52,7 @@ NULL
 #' crs_proj(sfx)
 NULL
 
-crs_wkt <- function(x, ...) {
-  .Defunct("crs_wkt2")
-}
+
+
+
 
