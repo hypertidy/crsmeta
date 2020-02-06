@@ -2,12 +2,12 @@
 % Please edit documentation in R/get_crs.R
 \name{crs_proj}
 \alias{crs_proj}
-\title{Extract PROJ4 string}
+\title{Extract 'PROJ4' string}
 \usage{
 crs_proj(x, ...)
 }
 \arguments{
-\item{x}{object with PROJ4 string}
+\item{x}{object with 'PROJ4' string}
 
 \item{...}{ignored}
 }
@@ -15,7 +15,7 @@ crs_proj(x, ...)
 character string (or \code{NA})
 }
 \description{
-Obtain the PROJ4 string from an object, if it has one. Supported inputs
+Obtain the 'PROJ4' string from an object, if it has one. Supported inputs
 include raster, sf, sp, and silicate.
 }
 \examples{
@@ -27,5 +27,5 @@ crs_proj(sfx$geom)
 \href{https://proj.org/}{PROJ system website}
 }
 \seealso{
-crs_epsg crs_wkt2
+\code{\link[=crs_epsg]{crs_epsg()}} \code{\link[=crs_wkt2]{crs_wkt2()}}
 }

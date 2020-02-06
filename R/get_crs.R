@@ -16,17 +16,17 @@ sf_core <- function(x, ...) {
   }
  x_na
 }
-#' Extract PROJ4 string
+#' Extract 'PROJ4' string
 #'
-#' Obtain the PROJ4 string from an object, if it has one. Supported inputs
+#' Obtain the 'PROJ4' string from an object, if it has one. Supported inputs
 #' include raster, sf, sp, and silicate.
 #'
-#' @param x object with PROJ4 string
+#' @param x object with 'PROJ4' string
 #' @param ... ignored
 #' @return character string (or `NA`)
 #' @references [PROJ system website](https://proj.org/)
 #' @export
-#' @seealso crs_epsg crs_wkt2
+#' @seealso [crs_epsg()] [crs_wkt2()]
 #' @examples
 #' crs_proj(sfx)
 #'
@@ -75,7 +75,7 @@ crs_proj <- function(x, ...) {
 #' @return character string (or `NA`)
 #' @references [WKT2 specification](http://docs.opengeospatial.org/is/12-063r5/12-063r5.html)
 #' @export
-#' @seealso crs_epsg crs_proj
+#' @seealso [crs_epsg()] [crs_proj()]
 #' @examples
 #' crs_wkt2(sfx)
 #'
@@ -109,7 +109,7 @@ crs_wkt2 <- function(x, ...) {
 #' @return integer (or NA)
 #' @export
 #' @references [EPSG website](http:/epsg.org/)
-#' @seealso crs_wkt2 crs_proj
+#' @seealso [crs_wkt2()] [crs_proj()]
 #' @examples
 #' crs_epsg(sfx)
 #' x <- sfx
