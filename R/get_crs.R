@@ -49,9 +49,9 @@ crs_proj <- function(x, ...) {
     }
     return(unclass(x))
   }
-  x <- sf_core(x)
-  if (!is.null(x) && !all(is.na(unlist(x)))) {
-    return(x[["proj4string"]])
+  xx <- sf_core(x)
+  if (!is.null(xx) && !all(is.na(unlist(xx)))) {
+    return(xx[["proj4string"]])
   }
 
   if (inherits(x, "sc")) {
