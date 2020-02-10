@@ -58,7 +58,7 @@ crs_proj(r)
 #> [1] "+proj=longlat +datum=WGS84 +no_defs"
 
 crs_proj(silicate::SC0(silicate::inlandwaters))
-#> [1] NA
+#> [1] "+proj=lcc +lat_1=-47 +lat_2=-17 +lat_0=-32 +lon_0=136 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
 ```
 
 This also works for sp, and sf. The function `crs_epsg()` also works for
@@ -84,5 +84,5 @@ crs_epsg(sfx)
 
 Please note that the crsmeta project is released with a [Contributor
 Code of
-Conduct](https://contributor-covenant.org/version/1/0/0/CODE_OF_CONDUCT.html).
+Conduct](https://github.com/hypertidy/crsmeta/blob/master/CODE_OF_CONDUCT.md).
 By contributing to this project, you agree to abide by its terms.

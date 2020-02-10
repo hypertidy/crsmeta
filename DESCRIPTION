@@ -1,6 +1,6 @@
 Package: crsmeta
 Title: Extract Coordinate System Metadata
-Version: 0.1.0
+Version: 0.1.5
 Authors@R: 
     person(given = "Michael",
            family = "Sumner",
