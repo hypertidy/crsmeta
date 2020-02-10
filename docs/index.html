@@ -38,7 +38,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">crsmeta</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.5</span>
       </span>
     </div>
 
@@ -105,7 +105,7 @@
 <a class="sourceLine" id="cb3-10" data-line-number="10"><span class="co">#&gt; [1] "+proj=longlat +datum=WGS84 +no_defs"</span></a>
 <a class="sourceLine" id="cb3-11" data-line-number="11"></a>
 <a class="sourceLine" id="cb3-12" data-line-number="12"><span class="kw"><a href="reference/crs_proj.html">crs_proj</a></span>(silicate<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/silicate/man/SC0.html">SC0</a></span>(silicate<span class="op">::</span>inlandwaters))</a>
-<a class="sourceLine" id="cb3-13" data-line-number="13"><span class="co">#&gt; [1] NA</span></a></code></pre></div>
+<a class="sourceLine" id="cb3-13" data-line-number="13"><span class="co">#&gt; [1] "+proj=lcc +lat_1=-47 +lat_2=-17 +lat_0=-32 +lon_0=136 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"</span></a></code></pre></div>
 <p>This also works for sp, and sf. The function <code><a href="reference/crs_epsg.html">crs_epsg()</a></code> also works for sf objects, and <code><a href="reference/crs_wkt2.html">crs_wkt2()</a></code> for sf and sp objects for later system-level versions of the PROJ library.</p>
 <p>Now sp or sf objects:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">sfx &lt;-<span class="st"> </span>sf<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/sf/man/st_read.html">read_sf</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="st">"gpkg/nc.gpkg"</span>, <span class="dt">package =</span> <span class="st">"sf"</span>, <span class="dt">mustWork =</span> <span class="ot">TRUE</span>))</a>
@@ -121,7 +121,7 @@
 <div id="code-of-conduct" class="section level2">
 <h2 class="hasAnchor">
 <a href="#code-of-conduct" class="anchor"></a>Code of Conduct</h2>
-<p>Please note that the crsmeta project is released with a <a href="https://contributor-covenant.org/version/1/0/0/CODE_OF_CONDUCT.html">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
+<p>Please note that the crsmeta project is released with a <a href="https://github.com/hypertidy/crsmeta/blob/master/CODE_OF_CONDUCT.md">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
 </div>
 </div>
   </div>
