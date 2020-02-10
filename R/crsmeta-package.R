@@ -39,7 +39,7 @@ NULL
 #' [silicate](https://CRAN.r-project.org/package=silicate/) package, with
 #' coordinate reference system information added.
 #'
-#' @section Warning: do not use this data in real situations, or as examplary
+#' @section Warning: do not use this data in real situations, or as exemplary
 #' of the 'sf' format. It was created purely to add examples to this package.
 #' @docType data
 #' @name sfx

@@ -22,8 +22,10 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.0.2
 Depends: R (>= 3.2)
 Suggests: 
-    testthat (>= 2.1.0)
+    testthat (>= 2.1.0),
+    spelling
 Imports: 
     methods
 URL: https://github.com/hypertidy/crsmeta
 BugReports: https://github.com/hypertidy/crsmeta/issues
+Language: en-US

@@ -10,7 +10,7 @@ A copy of the 'minimal_mesh' data set from the
 coordinate reference system information added.
 }
 \section{Warning}{
- do not use this data in real situations, or as examplary
+ do not use this data in real situations, or as exemplary
 of the 'sf' format. It was created purely to add examples to this package.
 }
 
