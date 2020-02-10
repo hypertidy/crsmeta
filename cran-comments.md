@@ -1,6 +1,6 @@
-## crsmeta 0.1.5
+## crsmeta 0.1.6
 
-* Fixed missing URL from README.md
+* Fixed broken URL (sorry!)
 
 Thank you!
 
@@ -14,9 +14,5 @@ Thank you!
 0 errors | 0 warnings | 2 notes
 
 * This is a new release.
-* Winbuilder shows a missing URL as below, but it's valid: 
 
-Found the following (possibly) invalid URLs:
-  URL: http:/epsg.org/
-  
   

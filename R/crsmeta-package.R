@@ -15,7 +15,7 @@ NULL
 #' Coordinate reference systems (CRS) are described at
 #' \url{https://en.wikipedia.org/wiki/Spatial_reference_system}. The
 #' European Petroleum Survey Group (EPSG) codes are maintained at
-#' \url{http:/epsg.org/}. The old 'PROJ4' forms (along with newer systems) are
+#' \url{http://epsg.org/}. The old 'PROJ4' forms (along with newer systems) are
 #' described with the 'PROJ' library  \url{https://proj.org/}. The  Well-Known
 #' Text system 'WKT2' is documented at
 #' \url{http://docs.opengeospatial.org/is/12-063r5/12-063r5.html}.
