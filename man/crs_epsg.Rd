@@ -25,7 +25,7 @@ attr(x$geom, "crs")$epsg <- NA ## oh no we lost it
 crs_epsg(x)
 }
 \references{
-\href{http:/epsg.org/}{EPSG website}
+\href{http://epsg.org/}{EPSG website}
 }
 \seealso{
 \code{\link[=crs_wkt2]{crs_wkt2()}} \code{\link[=crs_proj]{crs_proj()}}

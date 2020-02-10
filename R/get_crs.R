@@ -108,7 +108,7 @@ crs_wkt2 <- function(x, ...) {
 #' @param ... ignored
 #' @return integer (or NA)
 #' @export
-#' @references [EPSG website](http:/epsg.org/)
+#' @references [EPSG website](http://epsg.org/)
 #' @seealso [crs_wkt2()] [crs_proj()]
 #' @examples
 #' crs_epsg(sfx)
