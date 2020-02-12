@@ -18,7 +18,7 @@ of the 'sf' format. It was created purely to add examples to this package.
 ## three equivalent representations, of increasing richness
 crs_epsg(sfx)
 
-crs_wkt2(sfx)
-
 crs_proj(sfx)
+
+crs_wkt2(sfx)
 }
