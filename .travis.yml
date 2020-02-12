@@ -11,7 +11,7 @@ matrix:
     - r: 3.5
     - r: release
       env: R_CODECOV=true
-      before_cache: Rscript -e 'remotes::install_github("r-lib/pkgdow")'
+      before_cache: Rscript -e 'remotes::install_cran("pkgdown")'
       deploy:
         provider: script
         script: Rscript -e 'pkgdown::deploy_site_github()'
