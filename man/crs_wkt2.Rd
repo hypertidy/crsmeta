@@ -2,9 +2,12 @@
 % Please edit documentation in R/get_crs.R
 \name{crs_wkt2}
 \alias{crs_wkt2}
+\alias{crs_wkt}
 \title{Extract 'WKT2' string}
 \usage{
 crs_wkt2(x, ...)
+
+crs_wkt(x, ...)
 }
 \arguments{
 \item{x}{object with 'WKT2' string}
@@ -17,6 +20,10 @@ character string (or \code{NA})
 \description{
 Obtain the 'WKT2' string from an object, if it has one. Supported inputs
 include sp and sf.
+}
+\details{
+The functions \code{\link[=crs_wkt]{crs_wkt()}} and \code{\link[=crs_wkt2]{crs_wkt2()}} are aliased, they do the same
+thing.
 }
 \section{Warning}{
  For WKT2 only, PROJ6 and beyond
@@ -31,5 +38,5 @@ crs_wkt2(sfx$geom)
 \href{http://docs.opengeospatial.org/is/12-063r5/12-063r5.html}{WKT2 specification}
 }
 \seealso{
-\code{\link[=crs_epsg]{crs_epsg()}} \code{\link[=crs_proj]{crs_proj()}}
+\code{\link[=crs_epsg]{crs_epsg()}} \code{\link[=crs_proj]{crs_proj()}} \code{\link[=crs_wkt]{crs_wkt()}}
 }

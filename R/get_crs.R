@@ -51,7 +51,9 @@ crs_proj <- function(x, ...) {
   }
   xx <- sf_core(x)
   if (!is.null(xx) && !all(is.na(unlist(xx)))) {
-    return(xx[["proj4string"]])
+    out <- xx[["proj4string"]]
+    if (is.null(out)) out <- x_na
+    return(x_na)
   }
 
   if (inherits(x, "sc")) {
@@ -69,13 +71,16 @@ crs_proj <- function(x, ...) {
 #' Obtain the 'WKT2' string from an object, if it has one. Supported inputs
 #' include sp and sf.
 #'
+#' The functions [crs_wkt()] and [crs_wkt2()] are aliased, they do the same
+#' thing.
 #' @section Warning: For WKT2 only, PROJ6 and beyond
 #' @param x object with 'WKT2' string
 #' @param ... ignored
 #' @return character string (or `NA`)
 #' @references [WKT2 specification](http://docs.opengeospatial.org/is/12-063r5/12-063r5.html)
 #' @export
-#' @seealso [crs_epsg()] [crs_proj()]
+#' @aliases crs_wkt
+#' @seealso [crs_epsg()] [crs_proj()] [crs_wkt()]
 #' @examples
 #' crs_wkt2(sfx)
 #'
@@ -95,9 +100,16 @@ crs_wkt2 <- function(x, ...) {
   }
   x <- sf_core(x)
   if (!is.null(x) && !all(is.na(unlist(x)))) {
-    return(x[["wkt2"]])
+    out <- x[["wkt"]]
+    if (is.null(out)) out <- x_na
+    return(out)
   }
   x_na
+}
+#' @name crs_wkt2
+#' @export
+crs_wkt <- function(x, ...) {
+  crs_wkt2(x, ...)
 }
 #' Extract 'EPSG' value
 #'
@@ -119,7 +131,9 @@ crs_epsg <- function(x, ...) {
   x_na <- NA_integer_
   x <- sf_core(x)
   if (!is.null(x) && !all(is.na(unlist(x)))) {
-    return(x[["epsg"]])
+    out <- x[["epsg"]]
+    if (is.null(out)) out <- x_na
+    return(out)
   }
   x_na
 }

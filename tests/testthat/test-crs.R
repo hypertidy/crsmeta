@@ -11,22 +11,28 @@
 #
 #   expect_s3_class(sf_core(x), "crs")
 #   expect_true(is.character(crs_proj(x)))
+#   if (utils::packageVersion("sf") < "0.8-1") {
+#
 #   expect_true(!is.na(crs_proj(x)))
-#
+# }
 #   expect_true(is.character(crs_proj(x$geom)))
-#   expect_true(!is.na(crs_proj(x$geom)))
-#
+#   if (utils::packageVersion("sf") < "0.8-1") {
+#     expect_true(!is.na(crs_proj(x$geom)))
+#   }
 #
 #   expect_true(is.numeric(crs_epsg(x)))
-#   expect_true(!is.na(crs_epsg(x)))
-#
+#   if (utils::packageVersion("sf") < "0.8-1") {
+#     expect_true(!is.na(crs_epsg(x)))
+#   }
 #
 #   expect_true(is.numeric(crs_epsg(x$geom)))
-#   expect_true(!is.na(crs_epsg(x$geom)))
-#
+#   if (utils::packageVersion("sf") < "0.8-1") {
+#     expect_true(!is.na(crs_epsg(x$geom)))
+#   }
 #   expect_true(is.numeric(crs_epsg(x)))
-#   expect_true(!is.na(crs_epsg(x)))
-#
+#   if (utils::packageVersion("sf") < "0.8-1") {
+#    expect_true(!is.na(crs_epsg(x)))
+#  }
 #
 #   expect_true(expect_warning(is.numeric(crs_epsg(x$geom[[1]]))))
 #   expect_true(expect_warning(is.na(crs_epsg(x$geom[[1]]))))
