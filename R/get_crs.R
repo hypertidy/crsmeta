@@ -53,7 +53,7 @@ crs_proj <- function(x, ...) {
   if (!is.null(xx) && !all(is.na(unlist(xx)))) {
     out <- xx[["proj4string"]]
     if (is.null(out)) out <- x_na
-    return(x_na)
+    return(out)
   }
 
   if (inherits(x, "sc")) {
