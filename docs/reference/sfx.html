@@ -71,7 +71,7 @@ coordinate reference system information added." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">crsmeta</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.7</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0.9001</span>
       </span>
     </div>
 
@@ -85,6 +85,9 @@ coordinate reference system information added." />
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
+</li>
+<li>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -129,7 +132,7 @@ of the 'sf' format. It was created purely to add examples to this package.</p>
     <pre class="examples"><div class='input'><span class='co'>## three equivalent representations, of increasing richness</span>
 <span class='fu'><a href='crs_epsg.html'>crs_epsg</a></span>(<span class='no'>sfx</span>)</div><div class='output co'>#&gt; [1] 4326</div><div class='input'>
 <span class='fu'><a href='crs_proj.html'>crs_proj</a></span>(<span class='no'>sfx</span>)</div><div class='output co'>#&gt; [1] "+proj=longlat +datum=WGS84 +no_defs"</div><div class='input'>
-<span class='fu'><a href='crs_wkt2.html'>crs_wkt2</a></span>(<span class='no'>sfx</span>)</div><div class='output co'>#&gt; [1] "GEOGCRS[\"WGS 84\",\n    DATUM[\"World Geodetic System 1984\",\n        ELLIPSOID[\"WGS 84\",6378137,298.257223563,\n            LENGTHUNIT[\"metre\",1]]],\n    PRIMEM[\"Greenwich\",0,\n        ANGLEUNIT[\"degree\",0.0174532925199433]],\n    CS[ellipsoidal,2],\n        AXIS[\"geodetic latitude (Lat)\",north,\n            ORDER[1],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        AXIS[\"geodetic longitude (Lon)\",east,\n            ORDER[2],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n    USAGE[\n        SCOPE[\"unknown\"],\n        AREA[\"World\"],\n        BBOX[-90,-180,90,180]],\n    ID[\"EPSG\",4326]]"</div></pre>
+<span class='fu'><a href='crs_wkt2.html'>crs_wkt2</a></span>(<span class='no'>sfx</span>)</div><div class='output co'>#&gt; [1] NA</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

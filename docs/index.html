@@ -38,7 +38,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">crsmeta</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.7</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0.9001</span>
       </span>
     </div>
 
@@ -52,6 +52,9 @@
 </li>
 <li>
   <a href="reference/index.html">Reference</a>
+</li>
+<li>
+  <a href="news/index.html">Changelog</a>
 </li>
       </ul>
 <ul class="nav navbar-nav navbar-right">
@@ -84,39 +87,39 @@
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
 <p>You can install the released version of crsmeta from <a href="https://CRAN.R-project.org">CRAN</a> with:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"crsmeta"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"crsmeta"</span>)</span></code></pre></div>
 <p>Install the development version of crsmeta from <a href="https://github.com/hypertidy/crsmeta">Github</a>.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="co">## install.packages("remotes")</span></a>
-<a class="sourceLine" id="cb2-2" data-line-number="2">remotes<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/remotes/man/install_github.html">install_github</a></span>(<span class="st">"hypertidy/crsmeta"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co">## install.packages("remotes")</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>remotes<span class="op">::</span><span class="kw"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"hypertidy/crsmeta"</span>)</span></code></pre></div>
 </div>
 <div id="example" class="section level2">
 <h2 class="hasAnchor">
 <a href="#example" class="anchor"></a>Example</h2>
 <p>This is a basic example which shows you how to obtain the PROJ string from spatial objects (raster, or silicate):</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(crsmeta)</a>
-<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(raster)</a>
-<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="co">#&gt; Loading required package: sp</span></a>
-<a class="sourceLine" id="cb3-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb3-5" data-line-number="5"><span class="co">## a spatial object</span></a>
-<a class="sourceLine" id="cb3-6" data-line-number="6">r &lt;-<span class="st"> </span>raster<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/raster/man/raster.html">raster</a></span>()</a>
-<a class="sourceLine" id="cb3-7" data-line-number="7">r[<span class="dv">50</span><span class="op">:</span><span class="dv">51</span>] &lt;-<span class="st"> </span><span class="dv">10</span></a>
-<a class="sourceLine" id="cb3-8" data-line-number="8"></a>
-<a class="sourceLine" id="cb3-9" data-line-number="9"><span class="kw"><a href="reference/crs_proj.html">crs_proj</a></span>(r)</a>
-<a class="sourceLine" id="cb3-10" data-line-number="10"><span class="co">#&gt; [1] "+proj=longlat +datum=WGS84 +no_defs"</span></a>
-<a class="sourceLine" id="cb3-11" data-line-number="11"></a>
-<a class="sourceLine" id="cb3-12" data-line-number="12"><span class="kw"><a href="reference/crs_proj.html">crs_proj</a></span>(silicate<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/silicate/man/SC0.html">SC0</a></span>(silicate<span class="op">::</span>inlandwaters))</a>
-<a class="sourceLine" id="cb3-13" data-line-number="13"><span class="co">#&gt; [1] "+proj=lcc +lat_1=-47 +lat_2=-17 +lat_0=-32 +lon_0=136 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"</span></a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(crsmeta)</span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(raster)</span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="co">#&gt; Loading required package: sp</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a></span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="co">## a spatial object</span></span>
+<span id="cb3-6"><a href="#cb3-6"></a>r &lt;-<span class="st"> </span>raster<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/raster/man/raster.html">raster</a></span>()</span>
+<span id="cb3-7"><a href="#cb3-7"></a>r[<span class="dv">50</span><span class="op">:</span><span class="dv">51</span>] &lt;-<span class="st"> </span><span class="dv">10</span></span>
+<span id="cb3-8"><a href="#cb3-8"></a></span>
+<span id="cb3-9"><a href="#cb3-9"></a><span class="kw"><a href="reference/crs_proj.html">crs_proj</a></span>(r)</span>
+<span id="cb3-10"><a href="#cb3-10"></a><span class="co">#&gt; [1] "+proj=longlat +datum=WGS84 +no_defs"</span></span>
+<span id="cb3-11"><a href="#cb3-11"></a></span>
+<span id="cb3-12"><a href="#cb3-12"></a><span class="kw"><a href="reference/crs_proj.html">crs_proj</a></span>(silicate<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/silicate/man/SC0.html">SC0</a></span>(silicate<span class="op">::</span>inlandwaters))</span>
+<span id="cb3-13"><a href="#cb3-13"></a><span class="co">#&gt; [1] "+proj=lcc +lat_1=-47 +lat_2=-17 +lat_0=-32 +lon_0=136 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"</span></span></code></pre></div>
 <p>This also works for sp, and sf. The function <code><a href="reference/crs_epsg.html">crs_epsg()</a></code> also works for sf objects, and <code><a href="reference/crs_wkt2.html">crs_wkt2()</a></code> for sf and sp objects for later system-level versions of the PROJ library.</p>
 <p>Now sp or sf objects:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">sfx &lt;-<span class="st"> </span>sf<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/sf/man/st_read.html">read_sf</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="st">"gpkg/nc.gpkg"</span>, <span class="dt">package =</span> <span class="st">"sf"</span>, <span class="dt">mustWork =</span> <span class="ot">TRUE</span>))</a>
-<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="kw"><a href="reference/crs_proj.html">crs_proj</a></span>(sfx)</a>
-<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="co">#&gt; [1] "+proj=longlat +datum=NAD27 +no_defs"</span></a>
-<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="kw"><a href="reference/crs_proj.html">crs_proj</a></span>(<span class="kw">as</span>(sfx, <span class="st">"Spatial"</span>))</a>
-<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="co">#&gt; [1] "+proj=longlat +datum=NAD27 +no_defs"</span></a>
-<a class="sourceLine" id="cb4-6" data-line-number="6"><span class="kw"><a href="reference/crs_wkt2.html">crs_wkt2</a></span>(<span class="kw">as</span>(sfx, <span class="st">"Spatial"</span>))</a>
-<a class="sourceLine" id="cb4-7" data-line-number="7"><span class="co">#&gt; [1] "GEOGCRS[\"NAD27\",\n    DATUM[\"North American Datum 1927\",\n        ELLIPSOID[\"Clarke 1866\",6378206.4,294.978698213898,\n            LENGTHUNIT[\"metre\",1]]],\n    PRIMEM[\"Greenwich\",0,\n        ANGLEUNIT[\"degree\",0.0174532925199433]],\n    CS[ellipsoidal,2],\n        AXIS[\"geodetic latitude (Lat)\",north,\n            ORDER[1],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        AXIS[\"geodetic longitude (Lon)\",east,\n            ORDER[2],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n    USAGE[\n        SCOPE[\"unknown\"],\n        AREA[\"North America - NAD27\"],\n        BBOX[7.15,167.65,83.17,-47.74]],\n    ID[\"EPSG\",4267]]"</span></a>
-<a class="sourceLine" id="cb4-8" data-line-number="8"><span class="kw"><a href="reference/crs_epsg.html">crs_epsg</a></span>(sfx)</a>
-<a class="sourceLine" id="cb4-9" data-line-number="9"><span class="co">#&gt; [1] 4267</span></a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>sfx &lt;-<span class="st"> </span>sf<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/sf/man/st_read.html">read_sf</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="st">"gpkg/nc.gpkg"</span>, <span class="dt">package =</span> <span class="st">"sf"</span>, <span class="dt">mustWork =</span> <span class="ot">TRUE</span>))</span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="kw"><a href="reference/crs_proj.html">crs_proj</a></span>(sfx)</span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="co">#&gt; [1] "+proj=longlat +datum=NAD27 +no_defs"</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a><span class="kw"><a href="reference/crs_proj.html">crs_proj</a></span>(<span class="kw">as</span>(sfx, <span class="st">"Spatial"</span>))</span>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="co">#&gt; [1] "+proj=longlat +datum=NAD27 +no_defs"</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a><span class="kw"><a href="reference/crs_wkt2.html">crs_wkt2</a></span>(<span class="kw">as</span>(sfx, <span class="st">"Spatial"</span>))</span>
+<span id="cb4-7"><a href="#cb4-7"></a><span class="co">#&gt; [1] "GEOGCRS[\"NAD27\",\n    DATUM[\"North American Datum 1927\",\n        ELLIPSOID[\"Clarke 1866\",6378206.4,294.978698213898,\n            LENGTHUNIT[\"metre\",1]]],\n    PRIMEM[\"Greenwich\",0,\n        ANGLEUNIT[\"degree\",0.0174532925199433]],\n    CS[ellipsoidal,2],\n        AXIS[\"geodetic latitude (Lat)\",north,\n            ORDER[1],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        AXIS[\"geodetic longitude (Lon)\",east,\n            ORDER[2],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n    USAGE[\n        SCOPE[\"unknown\"],\n        AREA[\"North America - NAD27\"],\n        BBOX[7.15,167.65,83.17,-47.74]],\n    ID[\"EPSG\",4267]]"</span></span>
+<span id="cb4-8"><a href="#cb4-8"></a><span class="kw"><a href="reference/crs_epsg.html">crs_epsg</a></span>(sfx)</span>
+<span id="cb4-9"><a href="#cb4-9"></a><span class="co">#&gt; [1] 4267</span></span></code></pre></div>
 </div>
 <div id="code-of-conduct" class="section level2">
 <h2 class="hasAnchor">
@@ -130,6 +133,8 @@
     <div class="links">
 <h2>Links</h2>
 <ul class="list-unstyled">
+<li>Download from CRAN at <br><a href="https://cloud.r-project.org/package=crsmeta">https://​cloud.r-project.org/​package=crsmeta</a>
+</li>
 <li>Browse source code at <br><a href="https://github.com/hypertidy/crsmeta">https://​github.com/​hypertidy/​crsmeta</a>
 </li>
 <li>Report a bug at <br><a href="https://github.com/hypertidy/crsmeta/issues">https://​github.com/​hypertidy/​crsmeta/​issues</a>

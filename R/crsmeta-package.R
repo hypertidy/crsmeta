@@ -28,7 +28,10 @@ NULL
 #'  \code{\link{crs_wkt2}}        \tab the full parameter set as WKT2 string \cr
 #' }
 #'
-#' @name crsmeta-package
+#' Note: this reference page has a strange name 'crsmeta1-package' because
+#' for some reason 'crsmeta-package' does not show up in pkgdown
+#' output.
+#' @name crsmeta1-package
 #' @aliases crsmeta
 #' @docType package
 NULL

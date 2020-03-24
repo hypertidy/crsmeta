@@ -70,7 +70,7 @@ include sp and sf." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">crsmeta</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.7</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0.9001</span>
       </span>
     </div>
 
@@ -84,6 +84,9 @@ include sp and sf." />
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
+</li>
+<li>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -116,7 +119,9 @@ include sp and sf." />
 include sp and sf.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>crs_wkt2</span>(<span class='no'>x</span>, <span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>crs_wkt2</span>(<span class='no'>x</span>, <span class='no'>...</span>)
+
+<span class='fu'>crs_wkt</span>(<span class='no'>x</span>, <span class='no'>...</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -134,6 +139,10 @@ include sp and sf.</p>
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>character string (or <code>NA</code>)</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>The functions <code>crs_wkt()</code> and <code>crs_wkt2()</code> are aliased, they do the same
+thing.</p>
     <h2 class="hasAnchor" id="warning"><a class="anchor" href="#warning"></a>Warning</h2>
 
     <p>For WKT2 only, PROJ6 and beyond</p>
@@ -142,17 +151,18 @@ include sp and sf.</p>
     <p><a href='http://docs.opengeospatial.org/is/12-063r5/12-063r5.html'>WKT2 specification</a></p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='crs_epsg.html'>crs_epsg()</a></code> <code><a href='crs_proj.html'>crs_proj()</a></code></p></div>
+    <div class='dont-index'><p><code><a href='crs_epsg.html'>crs_epsg()</a></code> <code><a href='crs_proj.html'>crs_proj()</a></code> <code>crs_wkt()</code> <code><a href='crs_input.html'>crs_input()</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>crs_wkt2</span>(<span class='no'>sfx</span>)</div><div class='output co'>#&gt; [1] "GEOGCRS[\"WGS 84\",\n    DATUM[\"World Geodetic System 1984\",\n        ELLIPSOID[\"WGS 84\",6378137,298.257223563,\n            LENGTHUNIT[\"metre\",1]]],\n    PRIMEM[\"Greenwich\",0,\n        ANGLEUNIT[\"degree\",0.0174532925199433]],\n    CS[ellipsoidal,2],\n        AXIS[\"geodetic latitude (Lat)\",north,\n            ORDER[1],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        AXIS[\"geodetic longitude (Lon)\",east,\n            ORDER[2],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n    USAGE[\n        SCOPE[\"unknown\"],\n        AREA[\"World\"],\n        BBOX[-90,-180,90,180]],\n    ID[\"EPSG\",4326]]"</div><div class='input'>
-<span class='fu'>crs_wkt2</span>(<span class='no'>sfx</span>$<span class='no'>geom</span>)</div><div class='output co'>#&gt; [1] "GEOGCRS[\"WGS 84\",\n    DATUM[\"World Geodetic System 1984\",\n        ELLIPSOID[\"WGS 84\",6378137,298.257223563,\n            LENGTHUNIT[\"metre\",1]]],\n    PRIMEM[\"Greenwich\",0,\n        ANGLEUNIT[\"degree\",0.0174532925199433]],\n    CS[ellipsoidal,2],\n        AXIS[\"geodetic latitude (Lat)\",north,\n            ORDER[1],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        AXIS[\"geodetic longitude (Lon)\",east,\n            ORDER[2],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n    USAGE[\n        SCOPE[\"unknown\"],\n        AREA[\"World\"],\n        BBOX[-90,-180,90,180]],\n    ID[\"EPSG\",4326]]"</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>crs_wkt2</span>(<span class='no'>sfx</span>)</div><div class='output co'>#&gt; [1] NA</div><div class='input'>
+<span class='fu'>crs_wkt2</span>(<span class='no'>sfx</span>$<span class='no'>geom</span>)</div><div class='output co'>#&gt; [1] NA</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
       <li><a href="#value">Value</a></li>
+      <li><a href="#details">Details</a></li>
       <li><a href="#warning">Warning</a></li>
       <li><a href="#references">References</a></li>
       <li><a href="#see-also">See also</a></li>
