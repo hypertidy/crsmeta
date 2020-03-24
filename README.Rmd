@@ -75,6 +75,8 @@ Now sp or sf objects, note this will give different results depending on the ver
 R and other software in use: 
 
 ```{r sf}
+print(packageVersion("sf"))
+print(sf::sf_extSoftVersion())
 sfx <- sf::read_sf(system.file("gpkg/nc.gpkg", package = "sf", mustWork = TRUE))
 crs_proj(sfx)
 crs_proj(as(sfx, "Spatial"))

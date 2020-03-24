@@ -74,6 +74,11 @@ Now sp or sf objects, note this will give different results depending on
 the version/s of R and other software in use:
 
 ``` r
+print(packageVersion("sf"))
+#> [1] '0.9.0'
+print(sf::sf_extSoftVersion())
+#>           GEOS           GDAL         proj.4 GDAL_with_GEOS     USE_PROJ_H 
+#>        "3.8.0"        "3.0.4"        "7.0.0"         "true"         "true"
 sfx <- sf::read_sf(system.file("gpkg/nc.gpkg", package = "sf", mustWork = TRUE))
 crs_proj(sfx)
 #> [1] NA
