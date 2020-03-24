@@ -26,7 +26,7 @@ sf_core <- function(x, ...) {
 #' @return character string (or `NA`)
 #' @references [PROJ system website](https://proj.org/)
 #' @export
-#' @seealso [crs_epsg()] [crs_wkt2()]
+#' @seealso [crs_epsg()] [crs_wkt2()] [crs_input()]
 #' @examples
 #' crs_proj(sfx)
 #'
@@ -80,7 +80,7 @@ crs_proj <- function(x, ...) {
 #' @references [WKT2 specification](http://docs.opengeospatial.org/is/12-063r5/12-063r5.html)
 #' @export
 #' @aliases crs_wkt
-#' @seealso [crs_epsg()] [crs_proj()] [crs_wkt()]
+#' @seealso [crs_epsg()] [crs_proj()] [crs_wkt()] [crs_input()]
 #' @examples
 #' crs_wkt2(sfx)
 #'
@@ -121,7 +121,7 @@ crs_wkt <- function(x, ...) {
 #' @return integer (or NA)
 #' @export
 #' @references [EPSG website](http://www.epsg.org/)
-#' @seealso [crs_wkt2()] [crs_proj()]
+#' @seealso [crs_wkt2()] [crs_proj()] [crs_input()]
 #' @examples
 #' crs_epsg(sfx)
 #' x <- sfx
@@ -132,6 +132,33 @@ crs_epsg <- function(x, ...) {
   x <- sf_core(x)
   if (!is.null(x) && !all(is.na(unlist(x)))) {
     out <- x[["epsg"]]
+    if (is.null(out)) out <- x_na
+    return(out)
+  }
+  x_na
+}
+
+#' Extract 'input' value
+#'
+#' Obtain the 'input' string from an object, if it has one. Supported inputs
+#' include sf (>= 0.8-1 - probably).
+#'
+#' @param x object with 'input' value
+#' @param ... ignored
+#' @return character (or NA)
+#' @export
+#' @references [sf](http://r-spatial.github.io/sf/)
+#' @seealso [crs_wkt2()] [crs_proj()] [crs_epsg()]
+#' @examples
+#' crs_input(sfx)
+#' x <- sfx
+#' attr(x$geom, "crs")$epsg <- NA ## oh no we lost it
+#' crs_epsg(x)
+crs_input <- function(x, ...) {
+  x_na <- NA_character_
+  x <- sf_core(x)
+  if (!is.null(x) && !all(is.na(unlist(x)))) {
+    out <- x[["input"]]
     if (is.null(out)) out <- x_na
     return(out)
   }

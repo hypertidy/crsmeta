@@ -27,5 +27,5 @@ crs_proj(sfx$geom)
 \href{https://proj.org/}{PROJ system website}
 }
 \seealso{
-\code{\link[=crs_epsg]{crs_epsg()}} \code{\link[=crs_wkt2]{crs_wkt2()}}
+\code{\link[=crs_epsg]{crs_epsg()}} \code{\link[=crs_wkt2]{crs_wkt2()}} \code{\link[=crs_input]{crs_input()}}
 }

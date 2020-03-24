@@ -28,5 +28,5 @@ crs_epsg(x)
 \href{http://www.epsg.org/}{EPSG website}
 }
 \seealso{
-\code{\link[=crs_wkt2]{crs_wkt2()}} \code{\link[=crs_proj]{crs_proj()}}
+\code{\link[=crs_wkt2]{crs_wkt2()}} \code{\link[=crs_proj]{crs_proj()}} \code{\link[=crs_input]{crs_input()}}
 }

@@ -38,5 +38,5 @@ crs_wkt2(sfx$geom)
 \href{http://docs.opengeospatial.org/is/12-063r5/12-063r5.html}{WKT2 specification}
 }
 \seealso{
-\code{\link[=crs_epsg]{crs_epsg()}} \code{\link[=crs_proj]{crs_proj()}} \code{\link[=crs_wkt]{crs_wkt()}}
+\code{\link[=crs_epsg]{crs_epsg()}} \code{\link[=crs_proj]{crs_proj()}} \code{\link[=crs_wkt]{crs_wkt()}} \code{\link[=crs_input]{crs_input()}}
 }
