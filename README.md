@@ -55,7 +55,7 @@ r <- raster::raster()
 r[50:51] <- 10
 
 crs_proj(r)
-#> [1] "+proj=longlat +datum=WGS84 +no_defs"
+#> [1] "+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0"
 
 crs_proj(silicate::SC0(silicate::inlandwaters))
 #> [1] "+proj=lcc +lat_1=-47 +lat_2=-17 +lat_0=-32 +lon_0=136 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
@@ -63,21 +63,28 @@ crs_proj(silicate::SC0(silicate::inlandwaters))
 
 This also works for sp, and sf. The function `crs_epsg()` also works for
 sf objects, and `crs_wkt2()` for sf and sp objects for later
-system-level versions of the PROJ library.
+system-level versions of the PROJ library. The `crs_input()` function
+will return what the data set’s original coordinate system *was
+specified with* for new sf objects.
 
-Now sp or sf
-objects:
+Beware of `crs_input()` it can return EPSG, WKT, PROJ4, or many other
+variants and aliaeses.
+
+Now sp or sf objects, note this will give different results depending on
+the version/s of R and other software in use:
 
 ``` r
 sfx <- sf::read_sf(system.file("gpkg/nc.gpkg", package = "sf", mustWork = TRUE))
 crs_proj(sfx)
-#> [1] "+proj=longlat +datum=NAD27 +no_defs"
+#> [1] NA
 crs_proj(as(sfx, "Spatial"))
-#> [1] "+proj=longlat +datum=NAD27 +no_defs"
+#> [1] "+proj=longlat +datum=NAD27 +no_defs +ellps=clrk66 +nadgrids=@conus,@alaska,@ntv2_0.gsb,@ntv1_can.dat"
 crs_wkt2(as(sfx, "Spatial"))
 #> [1] "GEOGCRS[\"NAD27\",\n    DATUM[\"North American Datum 1927\",\n        ELLIPSOID[\"Clarke 1866\",6378206.4,294.978698213898,\n            LENGTHUNIT[\"metre\",1]]],\n    PRIMEM[\"Greenwich\",0,\n        ANGLEUNIT[\"degree\",0.0174532925199433]],\n    CS[ellipsoidal,2],\n        AXIS[\"geodetic latitude (Lat)\",north,\n            ORDER[1],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        AXIS[\"geodetic longitude (Lon)\",east,\n            ORDER[2],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n    USAGE[\n        SCOPE[\"unknown\"],\n        AREA[\"North America - NAD27\"],\n        BBOX[7.15,167.65,83.17,-47.74]],\n    ID[\"EPSG\",4267]]"
 crs_epsg(sfx)
-#> [1] 4267
+#> [1] NA
+crs_input(sfx)
+#> [1] "NAD27"
 ```
 
 ## Code of Conduct

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • crsmeta</title>
+<title>Extract Coordinate System Metadata — crsmeta • crsmeta</title>
 
 
 <!-- jquery -->
@@ -35,7 +35,9 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Extract Coordinate System Metadata — crsmeta" />
+<meta property="og:description" content="Obtain coordinate system metadata from various in-memory R formats." />
+<meta name="twitter:card" content="summary" />
 
 
 
@@ -54,7 +56,7 @@
   </head>
 
   <body>
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -104,72 +106,47 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Extract Coordinate System Metadata</h1>
+    <small class="dont-index">Source: <a href='https://github.com/hypertidy/crsmeta/blob/master/R/crsmeta-package.R'><code>R/crsmeta-package.R</code></a></small>
+    <div class="hidden name"><code>crsmeta.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    <p>Obtain coordinate system metadata from various in-memory R formats.</p>
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      <tr>
-        
-        <td>
-          <p><code><a href="crs_epsg.html">crs_epsg()</a></code> </p>
-        </td>
-        <td><p>Extract 'EPSG' value</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="crs_input.html">crs_input()</a></code> </p>
-        </td>
-        <td><p>Extract 'input' value</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="crs_proj.html">crs_proj()</a></code> </p>
-        </td>
-        <td><p>Extract 'PROJ4' string</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="crs_wkt2.html">crs_wkt2()</a></code> <code><a href="crs_wkt2.html">crs_wkt()</a></code> </p>
-        </td>
-        <td><p>Extract 'WKT2' string</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="crsmeta.html">crsmeta</a></code> </p>
-        </td>
-        <td><p>Extract Coordinate System Metadata</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="sfx.html">sfx</a></code> </p>
-        </td>
-        <td><p>Simple features example data</p></td>
-      </tr>
-    </tbody>
-    </table>
+
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>Coordinate reference systems (CRS) are described at
+<a href='https://en.wikipedia.org/wiki/Spatial_reference_system'>https://en.wikipedia.org/wiki/Spatial_reference_system</a>. The
+European Petroleum Survey Group (EPSG) codes are maintained at
+<a href='http://www.epsg.org/'>http://www.epsg.org/</a>. The old 'PROJ4' forms (along with newer systems) are
+described with the 'PROJ' library  <a href='https://proj.org/'>https://proj.org/</a>. The  Well-Known
+Text system 'WKT2' is documented at
+<a href='http://docs.opengeospatial.org/is/12-063r5/12-063r5.html'>http://docs.opengeospatial.org/is/12-063r5/12-063r5.html</a>.</p>
+<p>There are a few functions to return a character string of length one of each
+main kind of projection string.</p><table class='table'>
+<tr><td><code><a href='crs_epsg.html'>crs_epsg</a></code></td><td>short numeric EPSG lookup</td></tr>
+<tr><td><code><a href='crs_proj.html'>crs_proj</a></code></td><td>short PROJ4 style string</td></tr>
+<tr><td><code><a href='crs_wkt2.html'>crs_wkt2</a></code></td><td>the full parameter set as WKT2 string</td></tr>
+</table>
+
+
+<p>Note: this reference page has a strange name 'crsmeta1-package' because
+for some reason 'crsmeta-package' does not show up in pkgdown
+output.</p>
+
   </div>
-
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#section-all-functions">All functions</a></li>
+      <li><a href="#details">Details</a></li>
     </ul>
+
   </div>
 </div>
 

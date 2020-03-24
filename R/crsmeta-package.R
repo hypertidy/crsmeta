@@ -31,7 +31,8 @@ NULL
 #' Note: this reference page has a strange name 'crsmeta1-package' because
 #' for some reason 'crsmeta-package' does not show up in pkgdown
 #' output.
-#' @name crsmeta1-package
+#' @name crsmeta
+#' @aliases crsmeta-package
 #' @aliases crsmeta
 #' @docType package
 NULL

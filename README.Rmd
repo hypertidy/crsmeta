@@ -66,9 +66,13 @@ crs_proj(silicate::SC0(silicate::inlandwaters))
 
 This also works for sp, and sf. The function `crs_epsg()` also works
 for sf objects, and `crs_wkt2()` for sf and sp objects for later system-level 
-versions of the PROJ library. 
+versions of the PROJ library. The `crs_input()` function will return what the data set's
+original coordinate system *was specified with* for new sf objects. 
 
-Now sp or sf objects: 
+Beware of `crs_input()` it can return EPSG, WKT, PROJ4, or many other variants and aliaeses.
+
+Now sp or sf objects, note this will give different results depending on the version/s of
+R and other software in use: 
 
 ```{r sf}
 sfx <- sf::read_sf(system.file("gpkg/nc.gpkg", package = "sf", mustWork = TRUE))
@@ -76,6 +80,7 @@ crs_proj(sfx)
 crs_proj(as(sfx, "Spatial"))
 crs_wkt2(as(sfx, "Spatial"))
 crs_epsg(sfx)
+crs_input(sfx)
 ```
 
 ## Code of Conduct

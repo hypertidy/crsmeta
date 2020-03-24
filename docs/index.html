@@ -105,21 +105,24 @@
 <span id="cb3-7"><a href="#cb3-7"></a>r[<span class="dv">50</span><span class="op">:</span><span class="dv">51</span>] &lt;-<span class="st"> </span><span class="dv">10</span></span>
 <span id="cb3-8"><a href="#cb3-8"></a></span>
 <span id="cb3-9"><a href="#cb3-9"></a><span class="kw"><a href="reference/crs_proj.html">crs_proj</a></span>(r)</span>
-<span id="cb3-10"><a href="#cb3-10"></a><span class="co">#&gt; [1] "+proj=longlat +datum=WGS84 +no_defs"</span></span>
+<span id="cb3-10"><a href="#cb3-10"></a><span class="co">#&gt; [1] "+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0"</span></span>
 <span id="cb3-11"><a href="#cb3-11"></a></span>
 <span id="cb3-12"><a href="#cb3-12"></a><span class="kw"><a href="reference/crs_proj.html">crs_proj</a></span>(silicate<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/silicate/man/SC0.html">SC0</a></span>(silicate<span class="op">::</span>inlandwaters))</span>
 <span id="cb3-13"><a href="#cb3-13"></a><span class="co">#&gt; [1] "+proj=lcc +lat_1=-47 +lat_2=-17 +lat_0=-32 +lon_0=136 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"</span></span></code></pre></div>
-<p>This also works for sp, and sf. The function <code><a href="reference/crs_epsg.html">crs_epsg()</a></code> also works for sf objects, and <code><a href="reference/crs_wkt2.html">crs_wkt2()</a></code> for sf and sp objects for later system-level versions of the PROJ library.</p>
-<p>Now sp or sf objects:</p>
+<p>This also works for sp, and sf. The function <code><a href="reference/crs_epsg.html">crs_epsg()</a></code> also works for sf objects, and <code><a href="reference/crs_wkt2.html">crs_wkt2()</a></code> for sf and sp objects for later system-level versions of the PROJ library. The <code><a href="reference/crs_input.html">crs_input()</a></code> function will return what the data set’s original coordinate system <em>was specified with</em> for new sf objects.</p>
+<p>Beware of <code><a href="reference/crs_input.html">crs_input()</a></code> it can return EPSG, WKT, PROJ4, or many other variants and aliaeses.</p>
+<p>Now sp or sf objects, note this will give different results depending on the version/s of R and other software in use:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>sfx &lt;-<span class="st"> </span>sf<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/sf/man/st_read.html">read_sf</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="st">"gpkg/nc.gpkg"</span>, <span class="dt">package =</span> <span class="st">"sf"</span>, <span class="dt">mustWork =</span> <span class="ot">TRUE</span>))</span>
 <span id="cb4-2"><a href="#cb4-2"></a><span class="kw"><a href="reference/crs_proj.html">crs_proj</a></span>(sfx)</span>
-<span id="cb4-3"><a href="#cb4-3"></a><span class="co">#&gt; [1] "+proj=longlat +datum=NAD27 +no_defs"</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="co">#&gt; [1] NA</span></span>
 <span id="cb4-4"><a href="#cb4-4"></a><span class="kw"><a href="reference/crs_proj.html">crs_proj</a></span>(<span class="kw">as</span>(sfx, <span class="st">"Spatial"</span>))</span>
-<span id="cb4-5"><a href="#cb4-5"></a><span class="co">#&gt; [1] "+proj=longlat +datum=NAD27 +no_defs"</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="co">#&gt; [1] "+proj=longlat +datum=NAD27 +no_defs +ellps=clrk66 +nadgrids=@conus,@alaska,@ntv2_0.gsb,@ntv1_can.dat"</span></span>
 <span id="cb4-6"><a href="#cb4-6"></a><span class="kw"><a href="reference/crs_wkt2.html">crs_wkt2</a></span>(<span class="kw">as</span>(sfx, <span class="st">"Spatial"</span>))</span>
 <span id="cb4-7"><a href="#cb4-7"></a><span class="co">#&gt; [1] "GEOGCRS[\"NAD27\",\n    DATUM[\"North American Datum 1927\",\n        ELLIPSOID[\"Clarke 1866\",6378206.4,294.978698213898,\n            LENGTHUNIT[\"metre\",1]]],\n    PRIMEM[\"Greenwich\",0,\n        ANGLEUNIT[\"degree\",0.0174532925199433]],\n    CS[ellipsoidal,2],\n        AXIS[\"geodetic latitude (Lat)\",north,\n            ORDER[1],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        AXIS[\"geodetic longitude (Lon)\",east,\n            ORDER[2],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n    USAGE[\n        SCOPE[\"unknown\"],\n        AREA[\"North America - NAD27\"],\n        BBOX[7.15,167.65,83.17,-47.74]],\n    ID[\"EPSG\",4267]]"</span></span>
 <span id="cb4-8"><a href="#cb4-8"></a><span class="kw"><a href="reference/crs_epsg.html">crs_epsg</a></span>(sfx)</span>
-<span id="cb4-9"><a href="#cb4-9"></a><span class="co">#&gt; [1] 4267</span></span></code></pre></div>
+<span id="cb4-9"><a href="#cb4-9"></a><span class="co">#&gt; [1] NA</span></span>
+<span id="cb4-10"><a href="#cb4-10"></a><span class="kw"><a href="reference/crs_input.html">crs_input</a></span>(sfx)</span>
+<span id="cb4-11"><a href="#cb4-11"></a><span class="co">#&gt; [1] "NAD27"</span></span></code></pre></div>
 </div>
 <div id="code-of-conduct" class="section level2">
 <h2 class="hasAnchor">
