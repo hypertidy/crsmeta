@@ -68,7 +68,7 @@ will return what the data set’s original coordinate system *was
 specified with* for new sf objects.
 
 Beware of `crs_input()` it can return EPSG, WKT, PROJ4, or many other
-variants and aliaeses.
+variants and aliases.
 
 Now sp or sf objects, note this will give different results depending on
 the version/s of R and other software in use:
