@@ -3,11 +3,17 @@
 \docType{data}
 \name{sfx}
 \alias{sfx}
+\alias{sfx_new}
 \title{Simple features example data}
 \description{
 A copy of the 'minimal_mesh' data set from the
 \href{https://CRAN.r-project.org/package=silicate/}{silicate} package, with
 coordinate reference system information added.
+}
+\details{
+\code{sfx} is the old-style PROJ.4 and EPSG code CRS (prior to sf 0.8-1).
+
+\code{sfx_new} is the new-style WKT2, with user input.
 }
 \section{Warning}{
  do not use this data in real situations, or as exemplary
@@ -20,5 +26,12 @@ crs_epsg(sfx)
 
 crs_proj(sfx)
 
-crs_wkt2(sfx)
+crs_wkt2(sfx)  ## did not exist in earlier sf
+
+## new style
+crs_epsg(sfx_new) ## NA!
+crs_proj(sfx_new) ## NA!
+
+crs_input(sfx_new)
+crs_wkt(sfx_new)
 }

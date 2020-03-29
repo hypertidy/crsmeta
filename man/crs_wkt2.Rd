@@ -30,9 +30,11 @@ thing.
 }
 
 \examples{
-crs_wkt2(sfx)
+crs_wkt2(sfx) # NA
+crs_wkt2(sfx$geom) # NA
 
-crs_wkt2(sfx$geom)
+crs_wkt2(sfx_new)
+crs_wkt2(sfx_new$geom)
 }
 \references{
 \href{http://docs.opengeospatial.org/is/12-063r5/12-063r5.html}{WKT2 specification}

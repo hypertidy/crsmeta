@@ -40,17 +40,29 @@ NULL
 #' [silicate](https://CRAN.r-project.org/package=silicate/) package, with
 #' coordinate reference system information added.
 #'
+#' `sfx` is the old-style PROJ.4 and EPSG code CRS (prior to sf 0.8-1).
+#'
+#' `sfx_new` is the new-style WKT2, with user input.
+#'
 #' @section Warning: do not use this data in real situations, or as exemplary
 #' of the 'sf' format. It was created purely to add examples to this package.
 #' @docType data
 #' @name sfx
+#' @aliases sfx_new
 #' @examples
 #' ## three equivalent representations, of increasing richness
 #' crs_epsg(sfx)
 #'
 #' crs_proj(sfx)
 #'
-#' crs_wkt2(sfx)
+#' crs_wkt2(sfx)  ## did not exist in earlier sf
+#'
+#' ## new style
+#' crs_epsg(sfx_new) ## NA!
+#' crs_proj(sfx_new) ## NA!
+#'
+#' crs_input(sfx_new)
+#' crs_wkt(sfx_new)
 NULL
 
 

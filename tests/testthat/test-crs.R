@@ -42,7 +42,9 @@
 #   expect_true(is.numeric(crs_epsg(x)))
 #   if (utils::packageVersion("sf") < "0.8-1") {
 #    expect_true(!is.na(crs_epsg(x)))
+#
 #  }
+#
 #
 #   expect_true(expect_warning(is.numeric(crs_epsg(x$geom[[1]]))))
 #   expect_true(expect_warning(is.na(crs_epsg(x$geom[[1]]))))
@@ -55,8 +57,14 @@
 #     expect_true(grepl("+proj=lcc.*",
 #               crs_input(silicate::inlandwaters[1, ])))
 #
-#   }
 #
+#   expect_true(is.character(crs_input(sfx_new)))
+#   expect_true(!is.na(crs_input(sfx_new)))
+#
+#   expect_true(is.character(crs_wkt(sfx_new)))
+#   expect_true(!is.na(crs_wkt(sfx_new)))
+#
+# }
 # })
 #
 #

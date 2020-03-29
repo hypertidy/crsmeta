@@ -137,6 +137,17 @@ include sf (&gt;= 0.8-1 - probably).</p>
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>character (or NA)</p>
+    <h2 class="hasAnchor" id="warning"><a class="anchor" href="#warning"></a>Warning</h2>
+
+    
+
+
+<p>Note that the 'input' value could be almost anything, there is a
+huge variety of inputs that can work such as <code>4326</code>, projstrings,
+WKT2 strings, EPSG declarations <code>'EPSG:4326'</code>, or common strings like
+<code>'WGS84'</code> or <code>'NAD27'</code>.</p>
+<p>Strings like <code>'+init=epsg:4326'</code> have been deprecated but still
+can work, so beware.</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     <p><a href='http://r-spatial.github.io/sf/'>sf</a></p>
@@ -145,15 +156,15 @@ include sf (&gt;= 0.8-1 - probably).</p>
     <div class='dont-index'><p><code><a href='crs_wkt2.html'>crs_wkt2()</a></code> <code><a href='crs_proj.html'>crs_proj()</a></code> <code><a href='crs_epsg.html'>crs_epsg()</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>crs_input</span>(<span class='no'>sfx</span>)</div><div class='output co'>#&gt; [1] NA</div><div class='input'><span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='no'>sfx</span>
-<span class='fu'><a href='https://rdrr.io/r/base/attr.html'>attr</a></span>(<span class='no'>x</span>$<span class='no'>geom</span>, <span class='st'>"crs"</span>)$<span class='no'>epsg</span> <span class='kw'>&lt;-</span> <span class='fl'>NA</span> <span class='co'>## oh no we lost it</span>
-<span class='fu'><a href='crs_epsg.html'>crs_epsg</a></span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] NA</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>crs_input</span>(<span class='no'>sfx</span>) <span class='co'>## doesn't have one</span></div><div class='output co'>#&gt; [1] NA</div><div class='input'>
+<span class='fu'>crs_input</span>(<span class='no'>sfx_new</span>)  <span class='co'>## a proj4string</span></div><div class='output co'>#&gt; [1] "+proj=longlat +datum=WGS84 +no_defs"</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
       <li><a href="#value">Value</a></li>
+      <li><a href="#warning">Warning</a></li>
       <li><a href="#references">References</a></li>
       <li><a href="#see-also">See also</a></li>
       <li><a href="#examples">Examples</a></li>

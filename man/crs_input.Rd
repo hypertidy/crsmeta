@@ -18,11 +18,22 @@ character (or NA)
 Obtain the 'input' string from an object, if it has one. Supported inputs
 include sf (>= 0.8-1 - probably).
 }
+\section{Warning}{
+
+
+Note that the 'input' value could be almost anything, there is a
+huge variety of inputs that can work such as \code{4326}, projstrings,
+WKT2 strings, EPSG declarations \code{'EPSG:4326'}, or common strings like
+\code{'WGS84'} or \code{'NAD27'}.
+
+Strings like \code{'+init=epsg:4326'} have been deprecated but still
+can work, so beware.
+}
+
 \examples{
-crs_input(sfx)
-x <- sfx
-attr(x$geom, "crs")$epsg <- NA ## oh no we lost it
-crs_epsg(x)
+crs_input(sfx) ## doesn't have one
+
+crs_input(sfx_new)  ## a proj4string
 }
 \references{
 \href{http://r-spatial.github.io/sf/}{sf}

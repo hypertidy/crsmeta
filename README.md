@@ -79,16 +79,16 @@ print(packageVersion("sf"))
 print(sf::sf_extSoftVersion())
 #>           GEOS           GDAL         proj.4 GDAL_with_GEOS     USE_PROJ_H 
 #>        "3.8.0"        "3.0.4"        "7.0.0"         "true"         "true"
-sfx <- sf::read_sf(system.file("gpkg/nc.gpkg", package = "sf", mustWork = TRUE))
-crs_proj(sfx)
+north_carolina <- sf::read_sf(system.file("gpkg/nc.gpkg", package = "sf", mustWork = TRUE))
+crs_proj(north_carolina)
 #> [1] NA
-crs_proj(as(sfx, "Spatial"))
+crs_proj(as(north_carolina, "Spatial"))
 #> [1] "+proj=longlat +datum=NAD27 +no_defs +ellps=clrk66 +nadgrids=@conus,@alaska,@ntv2_0.gsb,@ntv1_can.dat"
-crs_wkt2(as(sfx, "Spatial"))
+crs_wkt2(as(north_carolina, "Spatial"))
 #> [1] "GEOGCRS[\"NAD27\",\n    DATUM[\"North American Datum 1927\",\n        ELLIPSOID[\"Clarke 1866\",6378206.4,294.978698213898,\n            LENGTHUNIT[\"metre\",1]]],\n    PRIMEM[\"Greenwich\",0,\n        ANGLEUNIT[\"degree\",0.0174532925199433]],\n    CS[ellipsoidal,2],\n        AXIS[\"geodetic latitude (Lat)\",north,\n            ORDER[1],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        AXIS[\"geodetic longitude (Lon)\",east,\n            ORDER[2],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n    USAGE[\n        SCOPE[\"unknown\"],\n        AREA[\"North America - NAD27\"],\n        BBOX[7.15,167.65,83.17,-47.74]],\n    ID[\"EPSG\",4267]]"
-crs_epsg(sfx)
+crs_epsg(north_carolina)
 #> [1] NA
-crs_input(sfx)
+crs_input(north_carolina)
 #> [1] "NAD27"
 ```
 
