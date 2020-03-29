@@ -1,8 +1,7 @@
-## crsmeta 0.2.0
+## crsmeta 0.3.0
 
-New release, work around new sf structure. 
-
-Thank you!
+New release, many apologies for such an early turn around, 
+I need this for new releases of other packages. 
 
 ## Test environments
 
@@ -13,5 +12,7 @@ Thank you!
 
 0 errors | 0 warnings | 0 notes
 
+## Reverse dependencies
 
+The revdep 'silicate' passes check with this version. 
   

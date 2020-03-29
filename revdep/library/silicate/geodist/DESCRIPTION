@@ -1,0 +1,35 @@
+Package: geodist
+Title: Fast, Dependency-Free Geodesic Distance Calculations
+Version: 0.0.3
+Authors@R: c(
+    person("Mark", "Padgham", email="mark.padgham@email.com", role=c("aut", "cre")),
+    person("Michael D.", "Sumner", role="aut"),
+    person("Charles F.F", "Karney", role="cph",
+        comment="Original author of included code for geodesic distances"))
+Description: Dependency-free, ultra fast calculation of geodesic distances.
+    Includes the reference nanometre-accuracy geodesic distances of Karney
+    (2013) <doi:10.1007/s00190-012-0578-z>, as used by the 'sf' package, as well
+    as Haversine and Vincenty distances. Default distance measure is the "Mapbox
+    cheap ruler" which is generally more accurate than Haversine or Vincenty for
+    distances out to a few hundred kilometres, and is considerably faster. The
+    main function accepts one or two inputs in almost any generic rectangular
+    form, and returns either matrices of pairwise distances, or vectors of
+    sequential distances.
+License: MIT + file LICENSE
+Suggests: knitr, testthat
+NeedsCompilation: yes
+VignetteBuilder: knitr
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
+URL: https://github.com/hypertidy/geodist
+BugReports: https://github.com/hypertidy/geodist/issues
+Packaged: 2019-04-17 09:45:28 UTC; markus
+Author: Mark Padgham [aut, cre],
+  Michael D. Sumner [aut],
+  Charles F.F Karney [cph] (Original author of included code for geodesic
+    distances)
+Maintainer: Mark Padgham <mark.padgham@email.com>
+Repository: CRAN
+Date/Publication: 2019-04-17 12:30:03 UTC
+Built: R 3.6.3; x86_64-pc-linux-gnu; 2020-03-29 07:48:36 UTC; unix
