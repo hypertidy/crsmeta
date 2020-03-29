@@ -3,6 +3,8 @@
 New release, many apologies for such an early turn around, 
 fixes some inconsistencies with the changes in sf format. 
 
+Thanks!
+
 ## Test environments
 
 * local R installation, R 3.6.3
