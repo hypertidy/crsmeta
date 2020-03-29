@@ -1,7 +1,7 @@
 ## crsmeta 0.3.0
 
 New release, many apologies for such an early turn around, 
-I need this for new releases of other packages. 
+fixes some inconsistencies with the changes in sf format. 
 
 ## Test environments
 
